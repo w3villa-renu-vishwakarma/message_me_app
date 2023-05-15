@@ -1,0 +1,44 @@
+<div class="text-center mt-3">
+  <h1>
+    <i class="fa-solid fa-mug-saucer fa-2x"></i> 
+  </h1>
+  <h2>Say something !!!</h2>
+</div>
+
+<div class="ui container stackable two column grid mt-3">
+  <div class="twelve wide column">
+    <div class="ui fluid raised card chatbox">
+      <div class="content" id="messages">
+        <div class="ui huge feed" id="message-container">
+          <%= render @messages %>
+        </div>
+      </div>
+      <div class="extra content">
+        <%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f| %>
+          <div class="field">
+            <div class="ui left icon input">
+              <%= f.text_field :body, placeholder: "write a message..." %>
+              <i class="rocketchat icon"></i>
+              <%= f.button '<div class="ui icon button blue"><i class="icon send"></i></div>'.html_safe %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%
+=begin%>
+ <div class="four wide column">
+    <div class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class="ui vertical inverted pointing menu">
+          <a class="active item">Home</a>
+          <a class="item">Messages</a>
+          <a class="item">Friends</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+<%
+=end%>
+</div>

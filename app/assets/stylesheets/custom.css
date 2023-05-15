@@ -1,0 +1,10 @@
+.chatbox{
+    height: 480px;
+}
+em{
+    font-size: 15px;
+}
+#messages {
+    height: 15em;
+    overflow: auto;
+}
